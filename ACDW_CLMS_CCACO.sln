@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ACDW_CLMS_CCACO", "ACDW_CLMS_CCACO\ACDW_CLMS_CCACO.sqlproj", "{22F035ED-05B9-4403-88A0-30DD39A3646A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22F035ED-05B9-4403-88A0-30DD39A3646A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F035ED-05B9-4403-88A0-30DD39A3646A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F035ED-05B9-4403-88A0-30DD39A3646A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{22F035ED-05B9-4403-88A0-30DD39A3646A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F035ED-05B9-4403-88A0-30DD39A3646A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F035ED-05B9-4403-88A0-30DD39A3646A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5106B46D-29B5-46A7-B5C7-1D9F58D59C41}
+	EndGlobalSection
+EndGlobal
