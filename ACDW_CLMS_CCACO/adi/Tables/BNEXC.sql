@@ -1,0 +1,26 @@
+﻿CREATE TABLE [adi].[BNEXC] (
+    [URN]               INT            IDENTITY (1, 1) NOT NULL,
+    [HeaderCode]        NVARCHAR (50)  NULL,
+    [FileCreationDate]  FLOAT (53)     NULL,
+    [HICN]              NVARCHAR (50)  NULL,
+    [FirstName]         NVARCHAR (50)  NULL,
+    [MiddleName]        NVARCHAR (50)  NULL,
+    [LastName]          NVARCHAR (50)  NULL,
+    [DOB]               FLOAT (53)     NULL,
+    [Gender]            NVARCHAR (10)  NULL,
+    [BeneExcReason]     NVARCHAR (100) NULL,
+    [TrailerCode]       NVARCHAR (20)  NULL,
+    [FileCreationDate2] FLOAT (53)     NULL,
+    [RecordCount]       FLOAT (53)     NULL,
+    [LOAD_DATE]         DATE           DEFAULT (sysdatetime()) NULL,
+    [LOAD_USER]         VARCHAR (50)   DEFAULT (suser_sname()) NULL,
+    [MBI]               VARCHAR (50)   NULL,
+    [PerformanceYear]   INT            NULL,
+    [SrcFileName]       VARCHAR (100)  NULL,
+    [FileDate]          DATE           NULL,
+    [CreateDate]        DATETIME       NULL,
+    [CreateBy]          VARCHAR (100)  NULL,
+    [OriginalFileName]  VARCHAR (100)  NULL,
+    PRIMARY KEY CLUSTERED ([URN] ASC)
+);
+

@@ -1,0 +1,7 @@
+﻿
+CREATE VIEW [dbo].zvw_LatestExclusionList
+as 
+SELECT DISTINCT HICN, LOAD_DATE  
+  FROM [dbo].[zBNEXC]
+  WHERE  LOAD_DATE = (SELECT MAX(LOAD_DATE) FROM [dbo].[zBNEXC])
+  GROUP BY [HICN], LOAD_DATE

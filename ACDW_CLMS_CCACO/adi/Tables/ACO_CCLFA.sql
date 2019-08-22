@@ -1,0 +1,27 @@
+﻿CREATE TABLE [adi].[ACO_CCLFA] (
+    [URN]                       INT           IDENTITY (1, 1) NOT NULL,
+    [CUR_CLM_UNIQ_ID]           VARCHAR (13)  NULL,
+    [BENE_MBI_ID]               VARCHAR (11)  NULL,
+    [BENE_HIC_NUM]              VARCHAR (11)  NULL,
+    [CLM_TYPE_CD]               VARCHAR (2)   NULL,
+    [CLM_ACTV_CARE_FROM_DT]     DATE          NULL,
+    [CLM_NGACO_PBPMT_SW]        CHAR (1)      NULL,
+    [CLM_NGACO_PDSCHRG_HCBS_SW] CHAR (1)      NULL,
+    [CLM_NGACO_SNF_WVR_SW]      CHAR (1)      NULL,
+    [CLM_NGACO_TLHLTH_SW]       CHAR (1)      NULL,
+    [CLM_NGACO_CPTATN_SW]       CHAR (1)      NULL,
+    [CLM_DEMO_1ST_NUM]          VARCHAR (2)   NULL,
+    [CLM_DEMO_2ND_NUM]          VARCHAR (2)   NULL,
+    [CLM_DEMO_3RD_NUM]          VARCHAR (2)   NULL,
+    [CLM_DEMO_4TH_NUM]          VARCHAR (2)   NULL,
+    [CLM_DEMO_5TH_NUM]          VARCHAR (2)   NULL,
+    [CLM_PBP_INCLSN_AMT]        MONEY         NULL,
+    [CLM_PBP_RDCTN_AMT]         MONEY         NULL,
+    [SrcFileName]               VARCHAR (100) NULL,
+    [FileDate]                  DATE          NULL,
+    [originalFileName]          VARCHAR (100) NULL,
+    [CreateDate]                DATETIME      NULL,
+    [CreateBy]                  VARCHAR (100) NULL,
+    CONSTRAINT [PK__CCLFA__C5B1000EBA2DC3A2] PRIMARY KEY CLUSTERED ([URN] ASC)
+);
+

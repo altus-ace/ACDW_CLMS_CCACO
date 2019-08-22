@@ -1,0 +1,2 @@
+﻿CREATE USER [ALTUSACE\Rpt_Admin] FOR LOGIN [ALTUSACE\Rpt_Admin];
+

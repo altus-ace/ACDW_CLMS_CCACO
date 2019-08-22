@@ -1,0 +1,25 @@
+﻿CREATE TABLE [adw].[Member_Unassigned_AWV_History] (
+    [URN]          INT          IDENTITY (1, 1) NOT NULL,
+    [HICN]         VARCHAR (50) NOT NULL,
+    [FIRST_NAME]   VARCHAR (50) NULL,
+    [LAST_NAME]    VARCHAR (50) NULL,
+    [SEX]          VARCHAR (1)  NULL,
+    [DOB]          DATE         NULL,
+    [MBR_TYPE]     VARCHAR (20) NULL,
+    [AWV]          INT          NULL,
+    [PCP]          INT          NULL,
+    [ER]           INT          NULL,
+    [IP]           INT          NULL,
+    [RA]           INT          NULL,
+    [GAPS]         INT          NULL,
+    [LST_SVC_NPI]  VARCHAR (50) NULL,
+    [LST_SVC_NAME] VARCHAR (50) NULL,
+    [LST_SVC_DATE] DATE         NULL,
+    [ACO_NPI]      VARCHAR (50) NULL,
+    [RUN_DATE]     DATE         NULL,
+    [RUN_YEAR]     INT          NULL,
+    [RUN_MTH]      INT          NULL,
+    [LOAD_DATE]    DATE         DEFAULT (sysdatetime()) NULL,
+    [LOAD_USER]    VARCHAR (50) DEFAULT (suser_sname()) NULL
+);
+

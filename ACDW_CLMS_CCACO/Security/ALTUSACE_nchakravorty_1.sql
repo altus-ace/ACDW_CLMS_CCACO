@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [ALTUSACE\nchakravorty]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

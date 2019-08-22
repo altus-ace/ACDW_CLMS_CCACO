@@ -1,0 +1,26 @@
+﻿CREATE TABLE [lst].[LIST_DRUG_PRODUCT] (
+    [Urn]                       INT            IDENTITY (1, 1) NOT NULL,
+    [PRODUCTID]                 VARCHAR (50)   NULL,
+    [PRODUCTNDC]                VARCHAR (15)   NULL,
+    [PRODUCTTYPENAME]           VARCHAR (50)   NULL,
+    [PROPRIETARYNAME]           VARCHAR (2500) NULL,
+    [PROPRIETARYNAMESUFFIX]     VARCHAR (250)  NULL,
+    [NONPROPRIETARYNAME]        VARCHAR (1000) NULL,
+    [DOSAGEFORMNAME]            VARCHAR (50)   NULL,
+    [ROUTENAME]                 VARCHAR (500)  NULL,
+    [STARTMARKETINGDATE]        VARCHAR (10)   NULL,
+    [ENDMARKETINGDATE]          VARCHAR (10)   NULL,
+    [MARKETINGCATEGORYNAME]     VARCHAR (50)   NULL,
+    [APPLICATIONNUMBER]         VARCHAR (20)   NULL,
+    [LABELERNAME]               VARCHAR (400)  NULL,
+    [SUBSTANCENAME]             VARCHAR (5000) NULL,
+    [ACTIVE_NUMERATOR_STRENGTH] VARCHAR (5000) NULL,
+    [ACTIVE_INGRED_UNIT]        VARCHAR (5000) NULL,
+    [PHARM_CLASSES]             VARCHAR (5000) NULL,
+    [DEASCHEDULE]               VARCHAR (10)   NULL,
+    [ACTIVE]                    VARCHAR (1)    DEFAULT ('Y') NOT NULL,
+    [LOAD_DATE]                 DATE           DEFAULT (getdate()) NULL,
+    [LOAD_USER]                 VARCHAR (25)   DEFAULT (suser_sname()) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Urn] ASC)
+);
+

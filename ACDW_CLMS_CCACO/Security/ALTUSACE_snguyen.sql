@@ -1,0 +1,2 @@
+﻿CREATE USER [ALTUSACE\snguyen] FOR LOGIN [ALTUSACE\snguyen];
+

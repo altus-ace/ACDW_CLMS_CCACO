@@ -1,0 +1,26 @@
+﻿CREATE TABLE [adi].[ACE.QASSGNT5] (
+    [QASSGNT5Key]          INT           IDENTITY (1, 1) NOT NULL,
+    [MBI]                  VARCHAR (50)  NULL,
+    [HICN]                 VARCHAR (50)  NULL,
+    [FirstName]            VARCHAR (50)  NULL,
+    [LastName]             VARCHAR (50)  NULL,
+    [Sex]                  VARCHAR (50)  NULL,
+    [DOB]                  VARCHAR (50)  NULL,
+    [DOD]                  VARCHAR (50)  NULL,
+    [Plurality]            VARCHAR (50)  NULL,
+    [1MthCoverage]         VARCHAR (50)  NULL,
+    [1MthHealthPlan]       VARCHAR (50)  NULL,
+    [NotUSResident]        VARCHAR (50)  NULL,
+    [InOtherSSInitiatives] VARCHAR (50)  NULL,
+    [NoPCPVisit]           VARCHAR (50)  NULL,
+    [EffQtr]               VARCHAR (50)  NULL,
+    [OriginalFileName]     VARCHAR (100) NOT NULL,
+    [SrcFileName]          VARCHAR (100) NOT NULL,
+    [LoadDate]             DATE          NOT NULL,
+    [CreatedDate]          DATE          CONSTRAINT [DF_adiACEQASSGNT5_CreatedDate] DEFAULT (getdate()) NOT NULL,
+    [CreatedBy]            VARCHAR (50)  CONSTRAINT [DF_adiACEQASSGNT5_CreatedBy] DEFAULT (suser_sname()) NOT NULL,
+    [LastUpdatedDate]      DATETIME      CONSTRAINT [DF_adiACEQASSGNT5_LastUpdatedDate] DEFAULT (getdate()) NOT NULL,
+    [LastUpdatedBy]        VARCHAR (50)  CONSTRAINT [DF_adiACEQASSGNT5_LastUpdatedBy] DEFAULT (suser_sname()) NOT NULL,
+    PRIMARY KEY CLUSTERED ([QASSGNT5Key] ASC)
+);
+

@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[z_QM_ResultByMember_History] (
+    [urn]             INT          IDENTITY (1, 1) NOT NULL,
+    [ClientMemberKey] VARCHAR (50) NOT NULL,
+    [QmMsrId]         VARCHAR (20) NOT NULL,
+    [QmCntCat]        VARCHAR (10) NOT NULL,
+    [QMDate]          DATE         NULL,
+    [CreateDate]      DATETIME     NOT NULL,
+    [CreateBy]        VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([urn] ASC)
+);
+

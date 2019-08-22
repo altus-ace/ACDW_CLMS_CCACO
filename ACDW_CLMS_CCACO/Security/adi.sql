@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [adi]
+    AUTHORIZATION [dbo];
+

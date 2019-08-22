@@ -1,0 +1,3 @@
+﻿CREATE USER [ALTUSACE\jwarren] FOR LOGIN [ALTUSACE\jwarren]
+    WITH DEFAULT_SCHEMA = [ALTUSACE\jwarren];
+

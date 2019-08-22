@@ -1,0 +1,12 @@
+﻿CREATE TABLE [lst].[LIST_DX_CODES] (
+    [DX_ID]     INT           IDENTITY (1, 1) NOT NULL,
+    [HCC_ID]    INT           NULL,
+    [CODE]      VARCHAR (20)  NOT NULL,
+    [CODE_NAME] VARCHAR (250) NULL,
+    [YEAR]      VARCHAR (4)   NULL,
+    [LOADDATE]  DATE          DEFAULT (sysdatetime()) NULL,
+    [LOADEDBY]  VARCHAR (100) DEFAULT (suser_sname()) NULL,
+    CONSTRAINT [PK_Dx_ID] PRIMARY KEY CLUSTERED ([DX_ID] ASC),
+    FOREIGN KEY ([HCC_ID]) REFERENCES [lst].[LIST_HCC_CODES] ([HCC_ID])
+);
+
