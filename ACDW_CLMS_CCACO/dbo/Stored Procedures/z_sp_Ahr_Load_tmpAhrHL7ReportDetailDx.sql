@@ -1,4 +1,4 @@
-﻿
+﻿--What is the aim?
 CREATE PROCEDURE [dbo].[z_sp_Ahr_Load_tmpAhrHL7ReportDetailDx]
 AS
     BEGIN
