@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [adi].[ACO_CCLF3] (
     [URN]                     INT           IDENTITY (1, 1) NOT NULL,
     [CUR_CLM_UNIQ_ID]         NUMERIC (26)  NULL,
-    [BENE_HIC_NUM]            VARCHAR (22)  NULL,
+    [BENE_HIC_NUM]            VARCHAR (11)  NULL,
     [CLM_TYPE_CD]             SMALLINT      NULL,
     [CLM_VAL_SQNC_NUM]        SMALLINT      NULL,
     [CLM_PRCDR_CD]            VARCHAR (7)   NULL,

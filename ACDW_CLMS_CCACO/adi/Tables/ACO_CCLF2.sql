@@ -2,7 +2,7 @@
     [URN]                        INT             IDENTITY (1, 1) NOT NULL,
     [CUR_CLM_UNIQ_ID]            NUMERIC (26)    NULL,
     [CLM_LINE_NUM]               INT             NULL,
-    [BENE_HIC_NUM]               VARCHAR (22)    NULL,
+    [BENE_HIC_NUM]               VARCHAR (11)    NULL,
     [CLM_TYPE_CD]                SMALLINT        NULL,
     [CLM_LINE_FROM_DT]           DATE            NULL,
     [CLM_LINE_THRU_DT]           DATE            NULL,

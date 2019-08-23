@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [adi].[ACO_CCLF8] (
     [adiCCLF8_SKey]             INT           IDENTITY (1, 1) NOT NULL,
-    [BENE_HIC_NUM]              VARCHAR (22)  NOT NULL,
+    [BENE_HIC_NUM]              VARCHAR (11)  NOT NULL,
     [BENE_FIPS_STATE_CD]        SMALLINT      NULL,
     [BENE_FIPS_CNTY_CD]         SMALLINT      NULL,
     [BENE_ZIP_CD]               VARCHAR (11)  NULL,
