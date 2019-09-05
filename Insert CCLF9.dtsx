@@ -1,0 +1,730 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/26/2019 11:36:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ACE-ITS-DT01"
+  DTS:CreatorName="ALTUSACE\snguyen"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{4231412C-49FC-40E0-8431-B02A1D32C84E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.371"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Insert CCLF9"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{3B252368-3DC8-4331-A108-DD0CD3DB1CC4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ECAB3EA4-0856-4CA0-B59C-879C5E463BD6}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ACE-SDV-DB01;Initial Catalog=ACDW_CLMS_CCACO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionExcel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{3290DC0B-4FD0-4D8C-91CC-25A1226508C0}"
+      DTS:ObjectName="SourceConnectionExcel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=P:\Information Technology\00_Work Folder\Onboarding\CCACO\QASSIGN\CCLF9.xlsx;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AdiCCLF9SourceToDestination"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{8BDDB0E4-100E-45BC-B460-1450F81BD48C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AdiCCLF9SourceToDestination"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="CCLF9SourceFile"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">P#A1002#Y18#CCLF9#D181106$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionExcel]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionExcel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[CRNT_HIC_NUM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[CRNT_HIC_NUM]"
+                      length="255"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[CRNT_HIC_NUM]"
+                      name="CRNT_HIC_NUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HIC_NUM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[PRVS_HIC_NUM]"
+                      length="255"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HIC_NUM]"
+                      name="PRVS_HIC_NUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_EFCTV_DT]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[PRVS_HICN_EFCTV_DT]"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_EFCTV_DT]"
+                      name="PRVS_HICN_EFCTV_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_OBSLT_DT]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[PRVS_HICN_OBSLT_DT]"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_OBSLT_DT]"
+                      name="PRVS_HICN_OBSLT_DT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[BENE_RRB_NUM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[BENE_RRB_NUM]"
+                      length="255"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[BENE_RRB_NUM]"
+                      name="BENE_RRB_NUM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[CRNT_HIC_NUM]"
+                      dataType="wstr"
+                      length="255"
+                      name="CRNT_HIC_NUM" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[PRVS_HIC_NUM]"
+                      dataType="wstr"
+                      length="255"
+                      name="PRVS_HIC_NUM" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[PRVS_HICN_EFCTV_DT]"
+                      dataType="date"
+                      name="PRVS_HICN_EFCTV_DT" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[PRVS_HICN_OBSLT_DT]"
+                      dataType="date"
+                      name="PRVS_HICN_OBSLT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].ExternalColumns[BENE_RRB_NUM]"
+                      dataType="wstr"
+                      length="255"
+                      name="BENE_RRB_NUM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[CRNT_HIC_NUM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[CRNT_HIC_NUM]"
+                      name="CRNT_HIC_NUM" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[PRVS_HIC_NUM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[PRVS_HIC_NUM]"
+                      name="PRVS_HIC_NUM" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[PRVS_HICN_EFCTV_DT]"
+                      dataType="date"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[PRVS_HICN_EFCTV_DT]"
+                      name="PRVS_HICN_EFCTV_DT" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[PRVS_HICN_OBSLT_DT]"
+                      dataType="date"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[PRVS_HICN_OBSLT_DT]"
+                      name="PRVS_HICN_OBSLT_DT" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[BENE_RRB_NUM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[BENE_RRB_NUM]"
+                      name="BENE_RRB_NUM" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[CRNT_HIC_NUM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CRNT_HIC_NUM"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[CRNT_HIC_NUM]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[PRVS_HIC_NUM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PRVS_HIC_NUM"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HIC_NUM]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[PRVS_HICN_EFCTV_DT]"
+                      cachedDataType="date"
+                      cachedName="PRVS_HICN_EFCTV_DT"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_EFCTV_DT]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[PRVS_HICN_OBSLT_DT]"
+                      cachedDataType="date"
+                      cachedName="PRVS_HICN_OBSLT_DT"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_OBSLT_DT]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[BENE_RRB_NUM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BENE_RRB_NUM"
+                      lineageId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[BENE_RRB_NUM]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CRNT_HIC_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="11"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CRNT_HIC_NUM]"
+                      name="CRNT_HIC_NUM"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[CRNT_HIC_NUM]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HIC_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="11"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HIC_NUM]"
+                      name="PRVS_HIC_NUM"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HIC_NUM]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HICN_EFCTV_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HICN_EFCTV_DT]"
+                      name="PRVS_HICN_EFCTV_DT"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_EFCTV_DT]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HICN_OBSLT_DT]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HICN_OBSLT_DT]"
+                      name="PRVS_HICN_OBSLT_DT"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[PRVS_HICN_OBSLT_DT]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[BENE_RRB_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="12"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[BENE_RRB_NUM]"
+                      name="BENE_RRB_NUM"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output].Columns[BENE_RRB_NUM]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ToAdiCCLF9Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[adi].[CCLF9]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].Columns[CRNT_HIC_NUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="CRNT_HIC_NUM"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[CRNT_HIC_NUM]"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CRNT_HIC_NUM]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].Columns[PRVS_HIC_NUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="PRVS_HIC_NUM"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[PRVS_HIC_NUM]"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HIC_NUM]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].Columns[PRVS_HICN_EFCTV_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="PRVS_HICN_EFCTV_DT"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[PRVS_HICN_EFCTV_DT]"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HICN_EFCTV_DT]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].Columns[PRVS_HICN_OBSLT_DT]"
+                      cachedDataType="dbDate"
+                      cachedName="PRVS_HICN_OBSLT_DT"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[PRVS_HICN_OBSLT_DT]"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRVS_HICN_OBSLT_DT]" />
+                    <inputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].Columns[BENE_RRB_NUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="BENE_RRB_NUM"
+                      externalMetadataColumnId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[BENE_RRB_NUM]"
+                      lineageId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[BENE_RRB_NUM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[URN]"
+                      dataType="i4"
+                      name="URN" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[CRNT_HIC_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="CRNT_HIC_NUM" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[PRVS_HIC_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="PRVS_HIC_NUM" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[PRVS_HICN_EFCTV_DT]"
+                      dataType="dbDate"
+                      name="PRVS_HICN_EFCTV_DT" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[PRVS_HICN_OBSLT_DT]"
+                      dataType="dbDate"
+                      name="PRVS_HICN_OBSLT_DT" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[BENE_RRB_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="BENE_RRB_NUM" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[SrcFileName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SrcFileName" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[FileDate]"
+                      dataType="dbDate"
+                      name="FileDate" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[originalFileName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="originalFileName" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      name="CreateDate" />
+                    <externalMetadataColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input].ExternalColumns[CreateBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CreateBy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\AdiCCLF9SourceToDestination.Paths[Data Conversion Output]"
+              endId="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\AdiCCLF9SourceToDestination.Paths[Excel Source Output]"
+              endId="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="220,42"
+          Id="Package\AdiCCLF9SourceToDestination"
+          TopLeft="271.5,91.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\AdiCCLF9SourceToDestination">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\AdiCCLF9SourceToDestination\CCLF9SourceFile"
+          TopLeft="303.5,40.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\AdiCCLF9SourceToDestination\Data Conversion 0 - 0"
+          TopLeft="283.5,125.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table"
+          TopLeft="293.5,229.5" />
+        <EdgeLayout
+          Id="Package\AdiCCLF9SourceToDestination.Paths[Excel Source Output]"
+          TopLeft="378.25,82.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AdiCCLF9SourceToDestination.Paths[Data Conversion Output]"
+          TopLeft="374.25,167.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\AdiCCLF9SourceToDestination\ToAdiCCLF9Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
