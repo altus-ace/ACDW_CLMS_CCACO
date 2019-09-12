@@ -81,6 +81,7 @@
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="adi\Stored Procedures\" />
     <Folder Include="amd\Stored Procedures\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\tmp_QM_COL_NUM_T.sql" />
@@ -562,5 +563,6 @@
     <Build Include="Security\ast.sql" />
     <Build Include="Security\lst.sql" />
     <Build Include="Security\stg.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
 </Project>
