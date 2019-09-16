@@ -39,7 +39,7 @@ AS
                                 AND ck.BENE_EQTBL_BIC_HICN_NUM = cl.BENE_EQTBL_BIC_HICN_NUM
                                 AND ck.CLM_FROM_DT = cl.CLM_FROM_DT
                                 AND ck.CLM_THRU_DT = cl.CLM_THRU_DT
-            JOIN ast.pstcDeDupClms_Cclf5 dd ON cl.URN = dd.urn
+            --JOIN ast.pstcDeDupClms_Cclf5 dd ON cl.URN = dd.urn --THIS IS A BUG
             JOIN ast.pstLatestEffectiveClmsHdr lr ON ck.clmSKey = lr.clmSKey
             JOIN adi.CCLF1 ch ON lr.clmHdrURN = ch.URN
        ORDER BY cl.CUR_CLM_UNIQ_ID,
