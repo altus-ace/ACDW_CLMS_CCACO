@@ -564,5 +564,6 @@
     <Build Include="Security\lst.sql" />
     <Build Include="Security\stg.sql" />
     <None Include="Scripts\adw.usp_UpdateAssignableMembersToU.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
 </Project>
