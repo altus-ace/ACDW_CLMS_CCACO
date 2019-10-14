@@ -1,0 +1,9 @@
+USE [ACDW_CLMS_CCACO]
+GO
+
+UPDATE [adw].[M_MEMBER_ENR]
+	SET [M_Alternate_Number] = b.HomePhone
+       ,[M_Mobile_Number] = b.MobilePhone
+	FROM [adi].[MbrCcaPhoneNumbers] b
+	INNER JOIN [adw].[M_MEMBER_ENR] a 
+	 ON b.ClientMemberKey = a.[CLIENT_UNIQUE_SYSTEM_ID];
