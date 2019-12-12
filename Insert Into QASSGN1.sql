@@ -1,6 +1,8 @@
 
 ---Load Members for each quater with other attributes
 ---Inserting into [ast].[ACE.QASSGNT1] from [adi].[ALR.QASSGNT1]
+DECLARE @EffQtr VARCHAR(10) 
+SET @EffQtr = CONCAT(YEAR(GETDATE()),'Q4')
 INSERT INTO			[ast].[QASSGNT1] 
 					(								 
 					[MBI] , [HICN] , [FirstName] , [LastName] 
@@ -36,7 +38,7 @@ SELECT
 					, convert([decimal](5, 4),  CASE WHEN ([Dem_RS_Disabled]	='') then '0' ELSE  [Dem_RS_Disabled]	  end )as [Dem_RS_Disabled]	 
 					, convert([decimal](5, 4),  CASE WHEN ([Dem_RS_AgedDual]	='') then '0' ELSE  [Dem_RS_AgedDual]	  end )as [Dem_RS_AgedDual]	 
 					, convert([decimal](5, 4),  CASE WHEN ([Dem_RS_AgedNonDual] ='') then '0' ELSE	[Dem_RS_AgedNonDual]  end )as [Dem_RS_AgedNonDual]
-					, '2019Q3', GETDATE(),  SUSER_NAME()
+					, @EffQtr, GETDATE(),  SUSER_NAME()
 					, [EnrollFlag1], [EnrollFlag2], [EnrollFlag3], [EnrollFlag4], [EnrollFlag5], [EnrollFlag6], [EnrollFlag7], [EnrollFlag8]
 					, [EnrollFlag9], [EnrollFlag10], [EnrollFlag11], [EnrollFlag12]
 FROM				[adi].[ALR.QASSGNT1]
@@ -47,7 +49,7 @@ WHERE				LOADDATE IN (SELECT MAX(LOADDATE) FROM [adi].[ALR.QASSGNT1] )
 INSERT INTO			[ast].[ACE.QASSGNT2] 
 					([MBI], [HICN], [FirstName], [LastName], [Sex], [DOB], [DOD], [TIN], [PCServices], [EffQtr], [LOAD_DATE], [LOAD_USER])
 
-SELECT				[MBI], [HICN], [FirstName], [LastName], [Sex], [DOB], [DOD], [TIN], [PCServices], '2019Q3', GETDATE(), SUSER_NAME()
+SELECT				[MBI], [HICN], [FirstName], [LastName], [Sex], [DOB], [DOD], [TIN], [PCServices], @EffQtr, GETDATE(), SUSER_NAME()
 FROM				[adi].[ALR.QASSGNT2]
 WHERE				LOADDATE IN (SELECT MAX(LOADDATE) FROM [adi].[ALR.QASSGNT2] )
 
@@ -56,7 +58,7 @@ WHERE				LOADDATE IN (SELECT MAX(LOADDATE) FROM [adi].[ALR.QASSGNT2] )
 ----Insert into [ast].[ACE.QASSGNT4]  from [adi].[ALR.QASSGNT4]
 INSERT INTO			[ast].[ACE.QASSGNT4] 
 					([MBI], [HICN], [FirstName], [LastName], [Sex], [DOB], [DOD], [TIN], [NPI], [EffQtr], [LOAD_DATE], [LOAD_USER])
-SELECT				[MBI], [HICN], [FirstName], [LastName], [Sex], [DOB], [DOD], [TIN], [NPI], '2019Q3', GETDATE(), SUSER_NAME()
+SELECT				[MBI], [HICN], [FirstName], [LastName], [Sex], [DOB], [DOD], [TIN], [NPI], @EffQtr, GETDATE(), SUSER_NAME()
 FROM				[adi].[ALR.QASSGNT4]
 WHERE				LOADDATE IN (SELECT MAX(LOADDATE) FROM [adi].[ALR.QASSGNT4] )
 
