@@ -58,12 +58,12 @@
 );
 
 
-GO
-CREATE STATISTICS [_dta_stat_955202503_10_7]
-    ON [adw].[tmp_Active_Members]([DOB], [Sex]);
 
 
 GO
-CREATE STATISTICS [_dta_stat_955202503_3_10_7]
-    ON [adw].[tmp_Active_Members]([HICN], [DOB], [Sex]);
+
+
+
+GO
+
 

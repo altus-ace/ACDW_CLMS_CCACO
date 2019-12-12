@@ -107,6 +107,8 @@
 );
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [Ndx_M_Mbr_Enr_Gender]
     ON [adw].[M_MEMBER_ENR]([M_Gender] ASC)
@@ -117,4 +119,9 @@ GO
 CREATE NONCLUSTERED INDEX [Ndx_M_MbrEnr_SubscriberID]
     ON [adw].[M_MEMBER_ENR]([SUBSCRIBER_ID] ASC)
     INCLUDE([M_Date_Of_Birth]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1570104634_2_104]
+    ON [adw].[M_MEMBER_ENR]([SUBSCRIBER_ID], [M_Member_Seq_ID]);
 

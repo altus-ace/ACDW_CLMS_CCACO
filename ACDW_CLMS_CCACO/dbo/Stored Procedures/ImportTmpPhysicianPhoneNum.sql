@@ -53,3 +53,9 @@ BEGIN
 	@SrcFileName
    );
 END
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[ImportTmpPhysicianPhoneNum] TO [BoomiDbUser]
+    AS [dbo];
+

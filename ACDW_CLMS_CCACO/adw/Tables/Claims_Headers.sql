@@ -43,8 +43,11 @@
     [A_CREATED_BY]       VARCHAR (50)  CONSTRAINT [DF_ClaimsHeaders_CreatedBy] DEFAULT (suser_sname()) NOT NULL,
     [A_LST_UPDATED_DATE] DATETIME      CONSTRAINT [DF_ClaimsHeaders_LastUpdatedDate] DEFAULT (sysdatetime()) NOT NULL,
     [A_LST_UPDATED_BY]   VARCHAR (50)  CONSTRAINT [DF_ClaimsHeaders_LastUpdatedBY] DEFAULT (suser_sname()) NOT NULL,
+    [TOTAL_PAID_AMT]     MONEY         NULL,
     CONSTRAINT [PK_Claims_Headers_SeqClaimId] PRIMARY KEY CLUSTERED ([SEQ_CLAIM_ID] ASC)
 );
+
+
 
 
 GO
@@ -130,4 +133,24 @@ CREATE STATISTICS [_dta_stat_1465108310_8_1_7_2_29_31]
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'From CMS Provider specialty List', @level0type = N'SCHEMA', @level0name = N'adw', @level1type = N'TABLE', @level1name = N'Claims_Headers', @level2type = N'COLUMN', @level2name = N'PROV_SPEC';
+
+
+GO
+CREATE STATISTICS [_dta_stat_1465108310_7_1_2_18]
+    ON [adw].[Claims_Headers]([PRIMARY_SVC_DATE], [SEQ_CLAIM_ID], [SUBSCRIBER_ID], [PROV_SPEC]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1465108310_29_1_7_2_18]
+    ON [adw].[Claims_Headers]([DRG_CODE], [SEQ_CLAIM_ID], [PRIMARY_SVC_DATE], [SUBSCRIBER_ID], [PROV_SPEC]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1465108310_2_7_17]
+    ON [adw].[Claims_Headers]([SUBSCRIBER_ID], [PRIMARY_SVC_DATE], [SVC_PROV_NPI]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1465108310_17_7]
+    ON [adw].[Claims_Headers]([SVC_PROV_NPI], [PRIMARY_SVC_DATE]);
 

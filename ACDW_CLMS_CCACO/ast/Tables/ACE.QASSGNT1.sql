@@ -103,6 +103,20 @@
     [Demo_RS_AgedNonDual] VARCHAR (50) NULL,
     [EffQtr]              VARCHAR (50) NULL,
     [LOAD_DATE]           DATE         DEFAULT (sysdatetime()) NULL,
-    [LOAD_USER]           VARCHAR (50) DEFAULT (suser_sname()) NULL
+    [LOAD_USER]           VARCHAR (50) DEFAULT (suser_sname()) NULL,
+    [EnrollFlag1]         VARCHAR (8)  NULL,
+    [EnrollFlag2]         VARCHAR (8)  NULL,
+    [EnrollFlag3]         VARCHAR (8)  NULL,
+    [EnrollFlag4]         VARCHAR (8)  NULL,
+    [EnrollFlag5]         VARCHAR (8)  NULL,
+    [EnrollFlag6]         VARCHAR (8)  NULL,
+    [EnrollFlag7]         VARCHAR (8)  NULL,
+    [EnrollFlag8]         VARCHAR (8)  NULL,
+    [EnrollFlag9]         VARCHAR (8)  NULL,
+    [EnrollFlag10]        VARCHAR (8)  NULL,
+    [EnrollFlag11]        VARCHAR (8)  NULL,
+    [EnrollFlag12]        VARCHAR (8)  NULL
 );
+
+
 

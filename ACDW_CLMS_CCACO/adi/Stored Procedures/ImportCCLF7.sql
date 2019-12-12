@@ -152,3 +152,9 @@ INSERT INTO [adi].[CCLF7]
 )
 END
 
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[adi].[ImportCCLF7] TO [BoomiDbUser]
+    AS [dbo];
+

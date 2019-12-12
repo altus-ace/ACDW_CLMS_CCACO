@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE adw.Load_Pdw_11_ClmsHeadersCclf1
+CREATE PROCEDURE [adw].[Load_Pdw_11_ClmsHeadersCclf1]
 AS    
     -- 1. Insert cliams Using LastClmRow set 
     
@@ -22,7 +22,8 @@ AS
            ,[DRG_CODE]           
            ,[ADMIT_SOURCE_CODE]          
            ,[PATIENT_STATUS]
-           ,[CLAIM_STATUS]                      
+           ,[CLAIM_STATUS] 
+		   ,[PROCESSING_STATUS]
            ,[TOTAL_BILLED_AMT]
 		 ,[CLAIM_TYPE]           
 	   )           
@@ -45,9 +46,12 @@ AS
 	   ,ch.[DGNS_DRG_CD]		--	DRG_CODE
 	   ,ch.CLM_ADMSN_SRC_CD		 -- Admit_source_code
 	   ,ch.[BENE_PTNT_STUS_CD]	--	PATIENT_STATUS
-	   ,ch.CLM_QUERY_CD			 -- claim status	   	 	   
+	   ,ch.CLM_QUERY_CD			 -- claim status
+	   ,'P'
 	   , ch.CLM_PMT_AMT			 -- total billed amount? 	
 	   , ch.CLM_TYPE_CD			-- claim_type	
 	FROM adi.CCLF1 ch
 	   JOIN ast.pstLatestEffectiveClmsHdr lr ON ch.URN = lr.clmHdrURN
     ;
+
+	--select * from adw.Claims_Headers

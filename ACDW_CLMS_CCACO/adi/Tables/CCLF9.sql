@@ -10,6 +10,24 @@
     [originalFileName]   VARCHAR (100) NULL,
     [CreateDate]         DATETIME      DEFAULT (sysdatetime()) NULL,
     [CreateBy]           VARCHAR (100) DEFAULT (suser_sname()) NULL,
+    [HICN_MBI_XREF_IND]  VARCHAR (1)   NULL,
     PRIMARY KEY CLUSTERED ([URN] ASC)
 );
+
+
+
+
+GO
+CREATE STATISTICS [_dta_stat_336056283_2_3]
+    ON [adi].[CCLF9]([CRNT_HIC_NUM], [PRVS_HIC_NUM]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_336056283_10_3_2]
+    ON [adi].[CCLF9]([CreateDate], [PRVS_HIC_NUM], [CRNT_HIC_NUM]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_336056283_10_2]
+    ON [adi].[CCLF9]([CreateDate], [CRNT_HIC_NUM]);
 

@@ -38,7 +38,7 @@ BEGIN
 --	IF @@ROWCOUNT = 0
 
     -- Insert statements for procedure here
- INSERT INTO adi.ACE.QASSGNT4
+ INSERT INTO [adi].[ALR.QASSGNT4]
    (
     OriginalFileName ,
 	SrcFileName  ,
@@ -67,6 +67,7 @@ BEGIN
 	--CreatedDate date ,
 	GETDATE(),
 	@CreatedBy  ,
+	GETDATE(),
 	--LastUpdatedDate datetime ,
 	@LastUpdatedBy,  
 	@MBI ,
@@ -81,3 +82,9 @@ BEGIN
 	@EffQtr 
    );
 END
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[adi].[ImportQASSGNT4] TO [BoomiDbUser]
+    AS [dbo];
+

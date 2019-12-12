@@ -1,5 +1,6 @@
-﻿CREATE PROCEDURE adw.Load_Pdw_02_CclfCmsKeyList
+﻿CREATE PROCEDURE [adw].[Load_Pdw_02_CclfCmsKeyList]
 AS 
+--Good to run / process SP.
     TRUNCATE TABLE ast.pstCclfClmKeyList;
     /* create list of clmSkeys: these are all related claims grouped on the cms defined relation criteria 
         and bound under varchar(50) key made from concatenation of all the 4 component parts */
@@ -14,4 +15,7 @@ AS
 		  DISTINCT  PRVDR_OSCAR_NUM, CLM_FROM_DT,	 CLM_THRU_DT,	  BENE_EQTBL_BIC_HICN_NUM
 		  FROM adi.CCLF1 ch
 			 JOIN ast.pstCclf1_DeDupClmsHdr ddH ON ch.urn = ddH.clm_URN) S;
+
+			 --select * from ast.pstCclf1_DeDupClmsHdr
+			 --select * from ast.pstCclfClmKeyList
 

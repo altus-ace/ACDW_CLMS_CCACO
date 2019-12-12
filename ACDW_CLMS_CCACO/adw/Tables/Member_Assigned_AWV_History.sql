@@ -21,3 +21,20 @@
     [LOAD_USER]          VARCHAR (50) DEFAULT (suser_sname()) NULL
 );
 
+
+
+
+GO
+CREATE STATISTICS [_dta_stat_947534459_3_17]
+    ON [adw].[Member_Assigned_AWV_History]([HICN], [RUN_YEAR]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_947534459_18_17]
+    ON [adw].[Member_Assigned_AWV_History]([RUN_MTH], [RUN_YEAR]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_947534459_17_18_3]
+    ON [adw].[Member_Assigned_AWV_History]([RUN_YEAR], [RUN_MTH], [HICN]);
+

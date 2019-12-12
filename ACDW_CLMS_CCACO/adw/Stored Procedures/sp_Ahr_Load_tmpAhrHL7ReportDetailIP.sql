@@ -63,12 +63,18 @@ SELECT DISTINCT --a.*,
 		,''
 		,''
 		,n.LBN_NAME
-		--,b.VENDOR_ID  
-FROM adw.[tvf_get_claims_w_dates]( 'Inpatient Stay','','',@BeginDate,@EndDate ) a 
-JOIN adw.Claims_Headers b on a.seq_claim_id = b.seq_claim_id
-JOIN dbo.vw_tmp_AHR_Population c ON b.SUBSCRIBER_ID = c.HICN
-LEFT JOIN lst.[LIST_NPPES] n on n.NPI = b.VENDOR_ID
-              
+		FROM adw.Claims_Headers a
+		JOIN dbo.vw_tmp_AHR_Population c ON a.SUBSCRIBER_ID = c.HICN
+		LEFT JOIN lst.[LIST_NPPES] n on n.NPI = a.VENDOR_ID
+		WHERE CATEGORY_OF_SVC = '60'
+		--AND a.[CLAIM_STATUS]		= 'P'
+		--AND a.[PROCESSING_STATUS]	= 'P'
+		
+	--FROM adw.[tvf_get_claims_w_dates]( 'Inpatient Stay','','',@BeginDate,@EndDate ) a 
+	--JOIN adw.Claims_Headers b on a.seq_claim_id = b.seq_claim_id
+	--JOIN dbo.vw_tmp_AHR_Population c ON b.SUBSCRIBER_ID = c.HICN
+	--LEFT JOIN lst.[LIST_NPPES] n on n.NPI = b.VENDOR_ID
+		           
 END
 
 

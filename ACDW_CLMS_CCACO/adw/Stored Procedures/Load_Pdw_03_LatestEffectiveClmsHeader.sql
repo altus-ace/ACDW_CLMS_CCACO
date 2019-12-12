@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE adw.Load_Pdw_03_LatestEffectiveClmsHeader
+CREATE PROCEDURE [adw].[Load_Pdw_03_LatestEffectiveClmsHeader]
 AS 
     TRUNCATE TABLE ast.pstLatestEffectiveClmsHdr;
     
@@ -15,4 +15,6 @@ AS
 	       JOIN ast.pstCclf1_DeDupClmsHdr ddH ON ch.urn = ddH.clm_URN	   
 	   ) src
     WHERE src.LastEffective = 1
+
+	--select * from ast.pstLatestEffectiveClmsHdr;
 

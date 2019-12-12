@@ -5,9 +5,10 @@
     [QmCntCat]        VARCHAR (10) NOT NULL,
     [QMDate]          DATE         CONSTRAINT [DF_QM_ResultByMbr_History_QmDate] DEFAULT (CONVERT([date],getdate())) NULL,
     [CreateDate]      DATETIME     CONSTRAINT [DF_QM_ResultByMbr_History_CreateDate] DEFAULT (getdate()) NOT NULL,
-    [CreateBy]        VARCHAR (50) CONSTRAINT [DF_QM_ResultByMbr_History_CreateBy] DEFAULT (suser_sname()) NOT NULL,
-    PRIMARY KEY CLUSTERED ([urn] ASC)
+    [CreateBy]        VARCHAR (50) CONSTRAINT [DF_QM_ResultByMbr_History_CreateBy] DEFAULT (suser_sname()) NOT NULL
 );
+
+
 
 
 GO

@@ -1,4 +1,4 @@
-﻿
+﻿------DO NOT PROCESS SP UNTIL VALIDATED WITH COUNT FROM SOURCE FILE
 CREATE PROCEDURE [adw].[LoadPdw_05_DeDupClmsProcs]
 AS 
     /* -- 5. de dup procedures
@@ -20,3 +20,6 @@ AS
 		  , ROW_NUMBER() OVER (PARTITION BY c.CUR_CLM_UNIQ_ID, c.CLM_VAL_SQNC_NUM ORDER BY c.FileDate Desc, c.originalFileName ASC) aDupID
 	   FROM adi.cclf3 c) s
     WHERE s.aDupID = 1;
+
+	-- where filedate =(select max(filedate) from adi.cclf3)
+	--select * from ast.pstcPrcDeDupUrns 

@@ -16,6 +16,24 @@
     [originalFileName]        VARCHAR (100) NULL,
     [CreateDate]              DATETIME      NULL,
     [CreateBy]                VARCHAR (100) NULL,
+    [BENE_MBI_ID]             VARCHAR (11)  NULL,
     PRIMARY KEY CLUSTERED ([URN] ASC)
 );
+
+
+
+
+GO
+CREATE STATISTICS [_dta_stat_1462296269_2_5_15]
+    ON [adi].[CCLF3]([CUR_CLM_UNIQ_ID], [CLM_VAL_SQNC_NUM], [originalFileName]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1462296269_2_5_14_15]
+    ON [adi].[CCLF3]([CUR_CLM_UNIQ_ID], [CLM_VAL_SQNC_NUM], [FileDate], [originalFileName]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1462296269_14_2]
+    ON [adi].[CCLF3]([FileDate], [CUR_CLM_UNIQ_ID]);
 

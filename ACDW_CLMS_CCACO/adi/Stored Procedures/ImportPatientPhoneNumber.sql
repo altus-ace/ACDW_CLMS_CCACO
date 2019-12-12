@@ -96,3 +96,9 @@ END
 
 
 
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[adi].[ImportPatientPhoneNumber] TO [BoomiDbUser]
+    AS [dbo];
+

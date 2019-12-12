@@ -25,9 +25,11 @@ AS
     TRUNCATE TABLE adw.Claims_Diags;
     TRUNCATE TABLE adw.Claims_Procs;
     TRUNCATE TABLE adw.Claims_Member;
-    TRUNCATE TABLE adw.Claims_Headers;
+    TRUNCATE TABLE adw.Claims_Headers; 
+	
 
-    --3. If setup is done already this step could be skipped
+    --3. If setup is done already this step could be skipped. 
+	    ----Process set of SP when filtering by filedate as cummulative date is needed to be processed
     EXEC adw.Load_Pdw_SetManagementTables;
 
     -- 4. Execute TABLE moves.
@@ -35,7 +37,7 @@ AS
     EXEC adw.Load_Pdw_12_ClmsDetailsCclf2;
     EXEC adw.Load_Pdw_13_ClmsProcsCclf3;
     EXEC adw.Load_Pdw_14_ClmsProcsCclf4;
-    EXEC adw.Load_Pdw_15_ClmsMemsCCLF8;
+    EXEC adw.Load_Pdw_15_ClmsMemsCCLF8;--Check this for file date
     EXEC adw.Load_Pdw_20_ClmsHdrsCclf5;
     EXEC adw.Load_Pdw_21_ClmsDtlsCclf5;
     EXEC adw.Load_Pdw_22_ClmsDiagsCclf5;

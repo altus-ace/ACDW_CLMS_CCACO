@@ -9,3 +9,15 @@
     PRIMARY KEY CLUSTERED ([clmSKey] ASC)
 );
 
+
+
+
+GO
+CREATE STATISTICS [_dta_stat_1713441178_2_3_4_5]
+    ON [ast].[pstCclfClmKeyList]([PRVDR_OSCAR_NUM], [BENE_EQTBL_BIC_HICN_NUM], [CLM_FROM_DT], [CLM_THRU_DT]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1713441178_1_2_3_4_5]
+    ON [ast].[pstCclfClmKeyList]([clmSKey], [PRVDR_OSCAR_NUM], [BENE_EQTBL_BIC_HICN_NUM], [CLM_FROM_DT], [CLM_THRU_DT]);
+

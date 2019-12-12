@@ -34,7 +34,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_ABA		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -43,7 +43,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_ART		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -52,7 +52,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_AWC		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 	
 	SET @StartTime = GETDATE();	   
@@ -61,7 +61,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_BCS		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 	
 	SET @StartTime = GETDATE();	   
@@ -70,7 +70,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CBP		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -79,7 +79,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CCS		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -88,7 +88,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CDC_0		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -97,7 +97,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CDC_7_9		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -106,7 +106,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CDC_BP		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 	
 	
 	SET @StartTime = GETDATE();	   
@@ -115,7 +115,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CDC_E		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 	
 
 	SET @StartTime = GETDATE();	   
@@ -124,7 +124,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CDC_HB		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -133,7 +133,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_CDC_N		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -142,7 +142,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_COA		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 	
 	
 	SET @StartTime = GETDATE();	   
@@ -151,7 +151,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_COL		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -160,7 +160,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_FUH		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -169,7 +169,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_PCE		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	
@@ -179,7 +179,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_SPD		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 	
 	
@@ -189,7 +189,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_SPR		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -198,7 +198,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_W15		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 	SET @StartTime = GETDATE();	   
@@ -207,7 +207,7 @@ AS
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
 	EXEC adw.sp_19_Calc_QM_W36		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 
 
@@ -215,8 +215,8 @@ AS
 	SET @qmFx = 'sp_19_Calc_QM_WCC'; 
 	EXEC AceMetaData.amd.sp_AceEtlAudit_Open @AuditID = @Audit_ID OUTPUT,   @AuditStatus = 1, @JobType = 5, @ClientKey = @ClientKey,@JobName = @JobName,
 	                   @ActionStartTime = @StartTime, @InputSourceName = @qmFx, @DestinationName = @Destination, @ErrorName = 'N/A' 
-	EXEC adw.sp_19_Calc_QM_ABA		2019, '6';
+	EXEC adw.sp_19_Calc_QM_WCC		2019, '6';
 	SET @StartTime = GETDATE();	   
-	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @audit_id = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
+	EXEC AceMetaData.amd.sp_AceEtlAudit_Close @auditid = @Audit_ID, @ActionStopTime = @StartTime, @SourceCount = 0, @DestinationCount = 0,@ErrorCount = 0;  
 
 	

@@ -16,7 +16,7 @@ CREATE PROCEDURE [adi].[ImportCCLF1](
 	@PRNCPL_DGNS_CD varchar(7),
 	@ADMTG_DGNS_CD varchar(7),
 	@CLM_MDCR_NPMT_RSN_CD char(2) ,
-	@CLM_PMT_AMT varchar(10),
+	@CLM_PMT_AMT varchar(20),
 	@CLM_NCH_PRMRY_PYR_CD char(1),
 	@PRVDR_FAC_FIPS_ST_CD char(2) ,
 	@BENE_PTNT_STUS_CD char(2),
@@ -72,7 +72,7 @@ BEGIN
  --IF (@Physician <>'' AND @FirstName <> '' AND @LastName <> ''  AND @MemberID <> '') 
 
     -- Insert statements for procedure here
-INSERT INTO [adi].[H_CCLF1]
+INSERT INTO [adi].[CCLF1]
 (
     [CUR_CLM_UNIQ_ID] ,
 	[PRVDR_OSCAR_NUM] ,
@@ -183,4 +183,10 @@ INSERT INTO [adi].[H_CCLF1]
 
 )
 END
+
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[adi].[ImportCCLF1] TO [BoomiDbUser]
+    AS [dbo];
 

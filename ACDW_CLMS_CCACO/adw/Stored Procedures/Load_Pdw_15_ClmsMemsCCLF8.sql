@@ -1,4 +1,4 @@
-﻿
+﻿---DONT RUN SP UNTIL VALIDATION FROM ADI
 CREATE PROCEDURE [adw].[Load_Pdw_15_ClmsMemsCCLF8]
 AS 
     -- insert Claims.Members
@@ -23,7 +23,7 @@ AS
         JOIN (SELECT *
 			 FROM (SELECT c.BENE_HIC_NUM, c.adiCCLF8_SKey
 				    , row_Number() OVER (PARTITION BY c.BENE_HIC_NUM ORDER BY c.FileDate DESC) arn
-				    FROM adi.CCLF8 c
+				    FROM adi.CCLF8 c 
 				    ) src
 			 WHERE src.arn = 1
 		  ) s ON m.adiCCLF8_SKey = s.adiCCLF8_SKey

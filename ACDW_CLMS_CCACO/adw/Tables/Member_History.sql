@@ -13,7 +13,7 @@
     [VoluntaryFlag]       CHAR (1)       NULL,
     [CBFlag]              CHAR (1)       NULL,
     [CBStepFlag]          CHAR (1)       NULL,
-    [PrevBenFlag]         CHAR (1)       NULL,
+    [PrevBenFlag]         CHAR (2)       NULL,
     [HCC1]                CHAR (1)       NULL,
     [HCC2]                CHAR (1)       NULL,
     [HCC6]                CHAR (1)       NULL,
@@ -110,7 +110,21 @@
     [MBR_YEAR]            INT            NULL,
     [MBR_QTR]             INT            NULL,
     [LOAD_DATE]           DATE           NULL,
-    [LOAD_USER]           VARCHAR (50)   NULL,
+    [LOAD_USER]           VARCHAR (25)   NULL,
+    [EnrollFlag1]         VARCHAR (8)    NULL,
+    [EnrollFlag2]         VARCHAR (8)    NULL,
+    [EnrollFlag3]         VARCHAR (8)    NULL,
+    [EnrollFlag4]         VARCHAR (8)    NULL,
+    [EnrollFlag5]         VARCHAR (8)    NULL,
+    [EnrollFlag6]         VARCHAR (8)    NULL,
+    [EnrollFlag7]         VARCHAR (8)    NULL,
+    [EnrollFlag8]         VARCHAR (8)    NULL,
+    [EnrollFlag9]         VARCHAR (8)    NULL,
+    [EnrollFlag10]        VARCHAR (8)    NULL,
+    [EnrollFlag11]        VARCHAR (8)    NULL,
+    [EnrollFlag12]        VARCHAR (8)    NULL,
     PRIMARY KEY CLUSTERED ([URN] ASC)
 );
+
+
 

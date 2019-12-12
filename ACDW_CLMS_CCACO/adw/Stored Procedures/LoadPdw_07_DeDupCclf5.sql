@@ -1,4 +1,5 @@
-﻿
+﻿--------PROCESS SP INDIVIDUALLY TO VALIDATE DEDUP ENTRIES FROM ADI FOR THE CURRENT MONTH
+
 CREATE PROCEDURE [adw].[LoadPdw_07_DeDupCclf5]
 AS    
     /* THIS IS UNIQUE TO CCLF model to handle PROFESSIONAL Component */
@@ -12,6 +13,6 @@ AS
     		  , CLM_TYPE_CD, CLM_CARR_PMT_DNL_CD, CLM_PRCSG_IND_CD, CLM_ADJSMT_TYPE_CD
     		  , fileDate, srcfileName
     		  , ROW_NUMBER() OVER (partition by CUR_CLM_UNIQ_ID, clm_line_num ORDER BY FileDate Desc) arn
-           FROM adi.cclf5 ) s
+           FROM adi.cclf5 WHERE FileDate = (select max(filedate) from adi.cclf5)) s
     WHERE s.arn = 1
 

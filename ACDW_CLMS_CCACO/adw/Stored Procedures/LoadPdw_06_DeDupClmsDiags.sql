@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [adw].[LoadPdw_06_DeDupClmsDiags]
+﻿
+CREATE PROCEDURE [adw].[LoadPdw_06_DeDupClmsDiags]
 AS 
 
      /* -- 6. de dup diags
@@ -18,5 +19,7 @@ AS
     SELECT s.URN
     FROM (SELECT c.URN, CUR_CLM_UNIQ_ID, CLM_VAL_SQNC_NUM, originalFileName, c.FileDate
 	   	  , ROW_NUMBER() OVER (PARTITION BY c.CUR_CLM_UNIQ_ID, c.CLM_VAL_SQNC_NUM ORDER BY c.FileDate DESC, c.originalFileName ASC) aDupID
-		  FROM adi.cclf4 c) s
+		  FROM adi.cclf4 c ) s
 		  WHERE s.aDupID = 1;
+
+		 -- select * from [ast].[pstcDgDeDupUrns]

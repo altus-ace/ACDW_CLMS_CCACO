@@ -14,6 +14,8 @@
 );
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [Ndx_ClmDgs_ClmID]
     ON [adw].[Claims_Diags]([SEQ_CLAIM_ID] ASC)
@@ -71,4 +73,24 @@ AS
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'The 4th character should be a dot.', @level0type = N'SCHEMA', @level0name = N'adw', @level1type = N'TABLE', @level1name = N'Claims_Diags', @level2type = N'COLUMN', @level2name = N'diagCode';
+
+
+GO
+CREATE STATISTICS [_dta_stat_1449108253_5_1]
+    ON [adw].[Claims_Diags]([diagNumber], [URN]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1449108253_3_1_2_4]
+    ON [adw].[Claims_Diags]([SUBSCRIBER_ID], [URN], [SEQ_CLAIM_ID], [ICD_FLAG]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1449108253_2_1_4_6_5_3]
+    ON [adw].[Claims_Diags]([SEQ_CLAIM_ID], [URN], [ICD_FLAG], [diagCode], [diagNumber], [SUBSCRIBER_ID]);
+
+
+GO
+CREATE STATISTICS [_dta_stat_1449108253_1_2_4_6_3]
+    ON [adw].[Claims_Diags]([URN], [SEQ_CLAIM_ID], [ICD_FLAG], [diagCode], [SUBSCRIBER_ID]);
 

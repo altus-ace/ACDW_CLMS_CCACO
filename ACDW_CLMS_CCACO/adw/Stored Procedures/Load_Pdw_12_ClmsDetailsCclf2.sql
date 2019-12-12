@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE adw.Load_Pdw_12_ClmsDetailsCclf2
+CREATE PROCEDURE [adw].[Load_Pdw_12_ClmsDetailsCclf2]
 AS 
     INSERT INTO adw.Claims_Details
 		  (SEQ_CLAIM_ID,
@@ -18,7 +18,7 @@ AS
 		   QUANTITY,
 		   Paid_Amt
 		  )
-       SELECT cl.[CUR_CLM_UNIQ_ID]						as seq_Claim_ID 
+       SELECT  cl.[CUR_CLM_UNIQ_ID]						as seq_Claim_ID 
               ,ck.clmSKey							as claim_number 
               ,cl.[CLM_LINE_NUM]						as line_Number 
               ,ch.CLM_ADJSMT_TYPE_CD					as SUB_LINE_CODE 
@@ -32,14 +32,14 @@ AS
               ,ch.[CLM_BILL_FAC_TYPE_CD]	   			as PLACE_OF_SVC_CODE1 
               ,ch.[CLM_BILL_CLSFCTN_CD]					as PLACE_OF_SVC_CODE2 
               ,cl.CLM_LINE_SRVC_UNIT_QTY				as QUANTITY 
-              ,cl.CLM_LINE_CVRD_PD_AMT					as Paid_amt 
-	   
+              ,cl.CLM_LINE_CVRD_PD_AMT					as Paid_amt     
        FROM adi.CCLF2 cl
             JOIN ast.pstCclfClmKeyList ck ON ck.PRVDR_OSCAR_NUM = cl.PRVDR_OSCAR_NUM
                                 AND ck.BENE_EQTBL_BIC_HICN_NUM = cl.BENE_EQTBL_BIC_HICN_NUM
                                 AND ck.CLM_FROM_DT = cl.CLM_FROM_DT
                                 AND ck.CLM_THRU_DT = cl.CLM_THRU_DT
-            --JOIN ast.pstcDeDupClms_Cclf5 dd ON cl.URN = dd.urn --THIS IS A BUG
+		  -- why CCLF5??? Head yea, Latest Eff Yeah.... CCL%5 makes no sense.
+            --JOIN ast.pstcDeDupClms_Cclf5 dd ON cl.URN = dd.urn THIS IS A BUG
             JOIN ast.pstLatestEffectiveClmsHdr lr ON ck.clmSKey = lr.clmSKey
             JOIN adi.CCLF1 ch ON lr.clmHdrURN = ch.URN
        ORDER BY cl.CUR_CLM_UNIQ_ID,

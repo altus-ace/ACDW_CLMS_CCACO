@@ -50,3 +50,9 @@ BEGIN
    GETDATE()
    );
 END
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[adi].[ImportTmpPhysicianPhoneNum] TO [BoomiDbUser]
+    AS [dbo];
+

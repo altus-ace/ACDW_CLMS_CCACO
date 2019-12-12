@@ -39,6 +39,8 @@
 );
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [NdxClmDetails_SEQ_CLAIM_ID]
     ON [adw].[Claims_Details]([SEQ_CLAIM_ID] ASC)
@@ -131,3 +133,8 @@ AS
 	, A_LST_UPDATED_BY = SYSTEM_USER
    FROM Inserted i
    WHERE adw.Claims_Details.URN = i.URN;
+
+GO
+CREATE STATISTICS [_dta_stat_149627626_1_13]
+    ON [adw].[Claims_Details]([URN], [REVENUE_CODE]);
+

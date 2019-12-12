@@ -1,3 +1,10 @@
 ﻿CREATE SCHEMA [adw]
     AUTHORIZATION [dbo];
 
+
+
+
+GO
+GRANT SELECT
+    ON SCHEMA::[adw] TO [ALTUSACE\Rpt_Admin];
+

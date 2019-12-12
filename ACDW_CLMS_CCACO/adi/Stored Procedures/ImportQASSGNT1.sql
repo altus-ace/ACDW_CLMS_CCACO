@@ -1,9 +1,4 @@
-﻿-- =============================================
--- Author:		<Author,,Name>
--- Create date: <Create Date,,>
--- Description:	<Description,,>
--- =============================================
-CREATE PROCEDURE adi.ImportQASSGNT1(
+﻿CREATE PROCEDURE [adi].[ImportQASSGNT1](
      @OriginalFileName varchar(100),
 	@SrcFileName varchar(100) ,
 	--@LoadDate date ,
@@ -112,8 +107,19 @@ CREATE PROCEDURE adi.ImportQASSGNT1(
 	@Dem_RS_ESRD varchar(50) ,
 	@Dem_RS_Disabled varchar(50) ,
 	@Dem_RS_AgedDual varchar(50) ,
-	@Dem_RS_AgedNonDual varchar(50) 
-  
+	@Dem_RS_AgedNonDual varchar(50) ,
+	@EnrollFlag1 varchar(8),
+	@EnrollFlag2 varchar(8),
+    @EnrollFlag3 varchar(8),
+	@EnrollFlag4 varchar(8),
+	@EnrollFlag5 varchar(8),
+	@EnrollFlag6 varchar(8),
+    @EnrollFlag7 varchar(8),
+	@EnrollFlag8 varchar(8),
+	@EnrollFlag9 varchar(8),
+	@EnrollFlag10 varchar(8),
+    @EnrollFlag11 varchar(8),
+	@EnrollFlag12 varchar(8)
 )
 	-- Add the parameters for the stored procedure here
 	
@@ -122,6 +128,7 @@ BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
+	SET ansi_warnings OFF 
 	--UPDATE adi.MbrAetCom
 --	SET MEMBER_ID  =  @MEMBER_ID 
 
@@ -131,7 +138,7 @@ BEGIN
 --	IF @@ROWCOUNT = 0
 
     -- Insert statements for procedure here
- INSERT INTO adi.ACE.QASSGNT1
+ INSERT INTO [adi].[ALR.QASSGNT1]
    (
    OriginalFileName ,
 	SrcFileName  ,
@@ -241,17 +248,30 @@ BEGIN
 	Dem_RS_ESRD  ,
 	Dem_RS_Disabled  ,
 	Dem_RS_AgedDual  ,
-	Dem_RS_AgedNonDual  
+	Dem_RS_AgedNonDual,  
+	EnrollFlag1 ,
+	EnrollFlag2,
+    EnrollFlag3 ,
+	EnrollFlag4 ,
+	EnrollFlag5 ,
+	EnrollFlag6,
+    EnrollFlag7 ,
+	EnrollFlag8 ,
+	EnrollFlag9 ,
+	EnrollFlag10 ,
+    EnrollFlag11 ,
+	EnrollFlag12
             )
      VALUES
    (
-       @OriginalFileName ,
+     @OriginalFileName ,
 	@SrcFileName  ,
 	GETDATE(),
 	--@LoadDate date ,
 	--CreatedDate date ,
 	GETDATE(),
 	@CreatedBy  ,
+	GETDATE(),
 	--LastUpdatedDate datetime ,
 	@LastUpdatedBy  ,
 	@MBI  ,
@@ -355,7 +375,24 @@ BEGIN
 	@Dem_RS_ESRD ,
 	@Dem_RS_Disabled  ,
 	@Dem_RS_AgedDual ,
-	@Dem_RS_AgedNonDual  
-  
+	@Dem_RS_AgedNonDual,  
+    @EnrollFlag1 ,
+	@EnrollFlag2 ,
+    @EnrollFlag3 ,
+	@EnrollFlag4 ,
+	@EnrollFlag5 ,
+	@EnrollFlag6 ,
+    @EnrollFlag7 ,
+	@EnrollFlag8 ,
+	@EnrollFlag9 ,
+	@EnrollFlag10 ,
+    @EnrollFlag11 ,
+	@EnrollFlag12 
    );
 END
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[adi].[ImportQASSGNT1] TO [BoomiDbUser]
+    AS [dbo];
+

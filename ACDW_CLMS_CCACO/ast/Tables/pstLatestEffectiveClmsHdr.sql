@@ -6,3 +6,10 @@
     PRIMARY KEY CLUSTERED ([clmSKey] ASC)
 );
 
+
+
+
+GO
+CREATE STATISTICS [_dta_stat_1777441406_1_2]
+    ON [ast].[pstLatestEffectiveClmsHdr]([clmSKey], [clmHdrURN]);
+

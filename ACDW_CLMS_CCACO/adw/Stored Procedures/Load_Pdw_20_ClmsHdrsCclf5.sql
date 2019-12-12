@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE adw.Load_Pdw_20_ClmsHdrsCclf5
+CREATE PROCEDURE [adw].[Load_Pdw_20_ClmsHdrsCclf5]
 AS 
     -- Insert claims headers for CCLF5
     INSERT INTO adw.Claims_Headers
@@ -39,5 +39,5 @@ AS
 	   , 'NO_APR'				  AS DRG_CODE
     FROM adi.CCLF5 c
 	   JOIN ast.pstcDeDupClms_Cclf5 d ON c.URN = d.urn
-    WHERE c.CLM_LINE_NUM = 1
+    WHERE c.CLM_LINE_NUM = 1 and filedate = (select max(filedate) from adi.cclf5)
     ;

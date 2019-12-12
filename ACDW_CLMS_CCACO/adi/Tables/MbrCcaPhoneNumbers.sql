@@ -16,9 +16,9 @@
     [MobilePhone]       VARCHAR (35)  NULL,
     [Language]          VARCHAR (35)  NULL,
     [FileDate]          DATE          NULL,
-    [CreateDate]        DATETIME      NULL,
-    [CreateBy]          VARCHAR (100) NULL,
     [OriginalFileName]  VARCHAR (100) NULL,
     PRIMARY KEY CLUSTERED ([MbrPhoneNumberUrn] ASC)
 );
+
+
 
